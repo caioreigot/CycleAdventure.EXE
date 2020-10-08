@@ -5,9 +5,16 @@ using UnityEngine;
 public class PlayerFootArea : MonoBehaviour
 {
 
+    private BoxCollider2D bc;
+
+    void Start()
+    {
+        bc = GetComponent<BoxCollider2D>();
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Pisando em uma falling platform
+        // Stepping on a falling platform
         if (collider.gameObject.layer == 10)
         {
             FallingPlatform.playerOnPlatform = true;
@@ -16,7 +23,7 @@ public class PlayerFootArea : MonoBehaviour
             Player.anim.SetBool("Jump", false);
         }
 
-        // Colidir com o chão ou falling platform
+        // Colliding with the ground or a falling platform
         if (collider.gameObject.layer == 8 || collider.gameObject.layer == 10) 
         {
             if (collider.gameObject.layer == 8) FallingPlatform.playerOnPlatform = false;
@@ -26,9 +33,10 @@ public class PlayerFootArea : MonoBehaviour
             Player.instance.ResetJumpAnimations();
         }
 
-        // Colidir com o espinho (game over)
+        // Colliding with spikes (game over)
         if (collider.gameObject.tag == "Spike")
         {
+            bc.enabled = false;
             Player.instance.Desappear();
 
             GameController.instance.ShowGameOver();

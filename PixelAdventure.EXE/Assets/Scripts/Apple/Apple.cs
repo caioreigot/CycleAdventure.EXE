@@ -10,10 +10,6 @@ public class Apple : MonoBehaviour
     public GameObject collected;
     public int score;
 
-    // Para saber quantas maças foram pegas na scene (pra subtrair do score, caso o jogador perca)
-    public static int sceneScoreEarned; // [!] Resetado no script LevelLoader
-
-    // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -24,14 +20,14 @@ public class Apple : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            // Desativando o colisor e o sprite renderer
+            // Desabling collider and sprite renderer
             sr.enabled = false;
             circle.enabled = false;
-            // Fazendo o efeito de coletar aparecer
+            
+            // Making the effect of collecting appear
             collected.SetActive(true);
 
             StaticVariables.TotalScore += score;
-            sceneScoreEarned += score;
 
             GameController.instance.UpdateScoreText();
 

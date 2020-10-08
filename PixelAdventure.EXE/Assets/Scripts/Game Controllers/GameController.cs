@@ -18,7 +18,8 @@ public class GameController : MonoBehaviour
     private bool restartGame = false;
     private int applesDecrement = 100;
 
-    // Start is called before the first frame update
+    private bool gameOverCalledThisFrame;
+
     void Start()
     {
         gameOver = GameObject.Find("Canvas")
@@ -31,13 +32,13 @@ public class GameController : MonoBehaviour
         .transform.Find("Game Over Panel")
         .transform.Find("Lost Apples").GetComponent<Text>();
 
-        // Pegar o valor do total score quando mudar de cena
-        UpdateScoreText(); 
+        // Boolean to prevent multiple calls to showGameOver function
+        gameOverCalledThisFrame = false;
 
-        // Reseta a pontuação obtida na cena
-        ResetEarnedSceneScore();
+        // Take the total score value when the scene changes
+        UpdateScoreText();
 
-        // Para poder acessar essa classe em outros scripts
+        // To be able to access this class in other scripts
         instance = this;
     }
 
@@ -48,9 +49,13 @@ public class GameController : MonoBehaviour
     
     public void ShowGameOver()
     {
+        // Preventing multiple calls
+        if (gameOverCalledThisFrame) return;
+        gameOverCalledThisFrame = true;
+
         gameOver.SetActive(true);
 
-        // Mostrando as maças perdidas na tela de Game Over
+        // Showing the lost apples on the game over screen
         if (StaticVariables.TotalScore - applesDecrement >= 0)
         {
             lostApples.text = "-" + Convert.ToString(applesDecrement).PadLeft(4, '0');
@@ -60,26 +65,28 @@ public class GameController : MonoBehaviour
             lostApples.text = "-" + Convert.ToString(StaticVariables.TotalScore).PadLeft(4, '0');
         }
 
-        // Tirar (applesDecrement) maças ao perder
+        // Take (applesDecrement) apples when losing
         if (StaticVariables.TotalScore - applesDecrement >= 0)
         {
             StaticVariables.TotalScore -= applesDecrement;
         }
-        // Se morrer e não tiver (applesDecrement) maças para perder, o jogador volta ao inicio do jogo.
+        
+        // If you die and have no (applesDecrement) to lose, player returns to the beginning of the game
         else
         {
             restartGame = true;
         }
+
     }
 
     public void Restart()
     {
-        // Reiniciar level
+        // Restart level
         if (!restartGame)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        // Reiniciar jogo
+        // Restart game
         else
         {
             ResetTotalScore();
@@ -88,16 +95,9 @@ public class GameController : MonoBehaviour
 
     }
 
-    #region Funções de RESET
-    public void ResetEarnedSceneScore()
-    {
-        Apple.sceneScoreEarned = 0;
-    }
-
     public void ResetTotalScore()
     {
         StaticVariables.TotalScore = 0;
     }
-    #endregion
 
 }

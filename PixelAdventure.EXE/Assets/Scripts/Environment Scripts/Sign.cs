@@ -33,7 +33,7 @@ public class Sign : MonoBehaviour
             }
         }
 
-        // Fechar a placa quando o player sair de perto
+        // Close the sign when the player walk away
         if (!nearTheSign && signCanvas.activeSelf == true)
         {
             anim.SetTrigger("Exit");

@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     public bool isJumping;
     public bool doubleJump;
 
-    // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -29,7 +28,6 @@ public class Player : MonoBehaviour
         instance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -40,30 +38,30 @@ public class Player : MonoBehaviour
     {
         //Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         
-        ////Transforma a position, sem física
+        ////Transform position, without physics
         //transform.position += movement * Time.deltaTime * speed;
 
         float horizontalMovement = Input.GetAxis("Horizontal"); 
 
         rig.velocity = new Vector2(horizontalMovement * speed, rig.velocity.y);
 
-        // Indo pra direita
+        // Going right
         if (horizontalMovement > 0f) 
         {
             anim.SetBool("Walk", true);
-            // Rotacionando pra direita
+            // Rotating right
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
 
-        // Indo pra esquerda
+        // Going left
         if (horizontalMovement < 0f) 
         {
             anim.SetBool("Walk", true);
-            // Rotacionando pra esquerda
+            // Rotating left
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
 
-        // Parado
+        // Stopped
         if (horizontalMovement == 0f) 
         {
             anim.SetBool("Walk", false);
