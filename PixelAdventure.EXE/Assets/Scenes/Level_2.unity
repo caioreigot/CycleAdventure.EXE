@@ -7146,7 +7146,7 @@ PrefabInstance:
     - target: {fileID: 9065342160275139065, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
       propertyPath: m_Text
-      value: Don't step on the thorns, bro!
+      value: Don't step on the spikes, bro!
       objectReference: {fileID: 0}
     - target: {fileID: 9065342160275139065, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
