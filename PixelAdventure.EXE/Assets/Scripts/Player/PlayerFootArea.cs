@@ -5,13 +5,6 @@ using UnityEngine;
 public class PlayerFootArea : MonoBehaviour
 {
 
-    private BoxCollider2D bc;
-
-    void Start()
-    {
-        bc = GetComponent<BoxCollider2D>();
-    }
-
     void OnTriggerEnter2D(Collider2D collider)
     {
         // Stepping on a falling platform
@@ -36,7 +29,6 @@ public class PlayerFootArea : MonoBehaviour
         // Colliding with spikes (game over)
         if (collider.gameObject.tag == "Spike")
         {
-            bc.enabled = false;
             Player.instance.Desappear();
 
             GameController.instance.ShowGameOver();

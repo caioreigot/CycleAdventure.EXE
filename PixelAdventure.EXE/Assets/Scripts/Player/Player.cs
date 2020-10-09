@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
+    //private CapsuleCollider2D cc;
     private SpriteRenderer sr;
     private GameObject desappearing;
     private Rigidbody2D rig;
@@ -22,6 +23,7 @@ public class Player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        //cc = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         desappearing = transform.Find("Desappearing").gameObject;
 
@@ -100,6 +102,7 @@ public class Player : MonoBehaviour
 
     public void Desappear()
     {
+        //cc.enabled = false;
         sr.enabled = false;
         desappearing.SetActive(true);
         
