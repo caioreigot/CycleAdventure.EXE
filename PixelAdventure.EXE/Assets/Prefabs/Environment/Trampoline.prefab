@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50499533557f474ba7b4fa8805f9c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 28
+  trampolineJumpForce: 16
 --- !u!1 &5725924745057086053
 GameObject:
   m_ObjectHideFlags: 0
