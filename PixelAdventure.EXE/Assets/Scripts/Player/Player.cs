@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     public bool isJumping;
     public bool doubleJump;
+    public bool isBlowing;
 
     void Start()
     {
@@ -72,7 +73,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isBlowing)
         {
             if (!isJumping)
             {
@@ -102,8 +103,9 @@ public class Player : MonoBehaviour
 
     public void Desappear()
     {
-        speed = 0;
         rig.bodyType = RigidbodyType2D.Kinematic;
+        rig.velocity = new Vector2(0f, 0f);
+        speed = 0;
 
         sr.enabled = false;
         desappearing.SetActive(true);

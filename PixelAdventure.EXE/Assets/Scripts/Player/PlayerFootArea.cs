@@ -41,6 +41,19 @@ public class PlayerFootArea : MonoBehaviour
         {
             Player.instance.isJumping = true;
         }
+
+        if (collider.gameObject.layer == 14)
+        {
+            Player.instance.isBlowing = false;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.gameObject.layer == 14)
+        {
+            Player.instance.isBlowing = true;
+        }
     }
 
 }

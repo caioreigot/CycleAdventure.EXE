@@ -6110,12 +6110,18 @@ PrefabInstance:
     - target: {fileID: 9065342160275139065, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
       propertyPath: m_Text
-      value: Don't step on the spikes, bro!
+      value: "\rHeey, I forgot to say, at the last level of the game, there will
+        be a reward waiting for you, and by the way, don't step on the spikes bro!"
       objectReference: {fileID: 0}
     - target: {fileID: 9065342160275139065, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065342160275139066, guid: 89dad16f94412a5408de7fa10fd4d650,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9065342160426669718, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
