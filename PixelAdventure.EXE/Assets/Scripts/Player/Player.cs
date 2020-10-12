@@ -102,7 +102,9 @@ public class Player : MonoBehaviour
 
     public void Desappear()
     {
-        //cc.enabled = false;
+        speed = 0;
+        rig.bodyType = RigidbodyType2D.Kinematic;
+
         sr.enabled = false;
         desappearing.SetActive(true);
         

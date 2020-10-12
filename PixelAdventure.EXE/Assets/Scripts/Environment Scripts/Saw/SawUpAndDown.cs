@@ -7,8 +7,9 @@ public class SawUpAndDown : MonoBehaviour
     public float speed;
     public float moveTime;
 
-    private bool dirUp = true;
     private float timer;
+
+    [SerializeField] bool dirUp = true;
 
     void Update()
     {

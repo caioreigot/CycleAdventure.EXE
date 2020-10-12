@@ -7,8 +7,9 @@ public class SawLeftRight : MonoBehaviour
     public float speed;
     public float moveTime;
 
-    private bool dirRight = true;
     private float timer;
+
+    [SerializeField] bool dirRight = true;
 
     void Update()
     {
