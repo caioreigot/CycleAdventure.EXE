@@ -11,14 +11,14 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr;
     private GameObject desappearing;
     private Rigidbody2D rig;
-    public static Animator anim;
+    [HideInInspector] public static Animator anim;
 
     public float speed;
     public float jumpForce;
 
-    public bool isJumping;
-    public bool doubleJump;
-    public bool isBlowing;
+    [HideInInspector] public bool isJumping;
+    [HideInInspector] public bool doubleJump;
+    [HideInInspector] public bool isBlowing;
 
     void Start()
     {

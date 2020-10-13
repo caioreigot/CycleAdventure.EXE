@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
 
-    public GameObject pressSpace;
+    private GameObject pressSpace;
 
     void Start()
     {

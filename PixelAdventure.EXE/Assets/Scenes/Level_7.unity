@@ -125578,6 +125578,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1769883140}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1778691638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1778691640}
+  - component: {fileID: 1778691639}
+  m_Layer: 9
+  m_Name: Destruction Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1778691639
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778691638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1778691640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778691638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.53, y: -4.29, z: -1.2056016}
+  m_LocalScale: {x: 6.360595, y: 0.45, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1778908533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127569,6 +127626,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Look Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607224450402474782, guid: e648df1c0c8937c4f94e183ed71d939a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 1.3645773
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607224450402474782, guid: e648df1c0c8937c4f94e183ed71d939a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.2437344
       objectReference: {fileID: 0}
     - target: {fileID: 1607224450402474783, guid: e648df1c0c8937c4f94e183ed71d939a,
         type: 3}
