@@ -112415,7 +112415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.8, y: 64.26}
+  m_AnchoredPosition: {x: -1.5, y: 64.26}
   m_SizeDelta: {x: 1891.0896, y: 1007.62964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231942787
@@ -112444,15 +112444,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 120
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This game gave me a lot of work haha! It took me a long time to make the
-    player you're playing, he is the second one I drew, I spent days making the first
-    prototype, but in the end I didn't like it and I ended up not using it...
+  m_Text: The game server is pretty empty lately, I apologize for that
 --- !u!222 &231942788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -116942,7 +116940,7 @@ PrefabInstance:
     - target: {fileID: 9065342160275139066, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.4
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 9065342160275139067, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}

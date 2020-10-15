@@ -10,7 +10,7 @@ public class JumpLevel : MonoBehaviour
         // After closing the game at Level_8, will load scene Level_9
         if (PlayerPrefs.GetInt("AfterQuit", 0) == 1)
         {
-            SceneManager.LoadScene(8);
+            SceneManager.LoadScene(9);
         }
     }
 }

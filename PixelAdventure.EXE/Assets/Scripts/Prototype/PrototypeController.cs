@@ -46,7 +46,7 @@ public class PrototypeController : MonoBehaviour
                         yield return new WaitForSeconds(2f);
                     
                     prototypeText.text += " ";
-                    typeSpeed = 0.001f;
+                    typeSpeed = 0f;
                     typeFast = true;
 
                     count++;
