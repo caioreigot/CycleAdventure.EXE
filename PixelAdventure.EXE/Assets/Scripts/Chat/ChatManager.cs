@@ -53,6 +53,8 @@ public class ChatManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return) && !CaioSendMessages.caioTalking)
             {
                 SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
+
+                ChatCommands.instance.CheckCommand(chatBox.text);
                 chatBox.text = "";
             }
         }

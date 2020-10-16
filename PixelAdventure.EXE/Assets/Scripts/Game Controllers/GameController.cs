@@ -40,6 +40,9 @@ public class GameController : MonoBehaviour
 
         // To be able to access this class in other scripts
         instance = this;
+
+        // To find out how many apples the player picked up before the level
+        StaticVariables.AmountApplesLevelPast = StaticVariables.TotalScore;
     }
 
     public void UpdateScoreText()
@@ -90,13 +93,14 @@ public class GameController : MonoBehaviour
         else
         {
             ResetTotalScore();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
     }
 
     public void ResetTotalScore()
     {
+        StaticVariables.AmountApplesLevelPast = 0;
         StaticVariables.TotalScore = 0;
     }
 

@@ -3991,7 +3991,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "\rIf I were you, I'd fall on that pig's head down there, after all,
-        that's how many games work to kill enemies"
+        that's how many platform games work to kill enemies"
       objectReference: {fileID: 0}
     - target: {fileID: 9065342160275139065, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
@@ -4007,6 +4007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Text1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065342160275139067, guid: 89dad16f94412a5408de7fa10fd4d650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9065342160426669718, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6148794608511235885}
   - component: {fileID: 6148794608511235882}
+  - component: {fileID: 2562547935806488577}
   m_Layer: 0
   m_Name: Chat Manager
   m_TagString: Untagged
@@ -53,3 +54,15 @@ MonoBehaviour:
   caioMessage: {r: 0.114909925, g: 0.87058824, b: 0.06790589, a: 0}
   info: {r: 0.4669811, g: 0.83816576, b: 1, a: 1}
   messageList: []
+--- !u!114 &2562547935806488577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148794608511235883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da319b0ae1efce45a29f7e5eed81790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

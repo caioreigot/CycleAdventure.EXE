@@ -37,7 +37,7 @@ public class CaioSendMessages : MonoBehaviour
         
         yield return new WaitForSeconds(13f);
 
-        ChatManager.instance.SendMessageToChat("Caio: It seems that he hates those who play this game, for not being able to participate and for not being able to get the reward at the end of the game", messageType);
+        ChatManager.instance.SendMessageToChat("Caio: It seems that he hates those who play this game, for not being able to participate and for not being able to get the reward at the end", messageType);
         
         yield return new WaitForSeconds(13f);
 
@@ -51,7 +51,7 @@ public class CaioSendMessages : MonoBehaviour
         
         ChatManager.instance.SendMessageToChat("Caio: Sorry about that, see ya!", messageType);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         caioTalking = false;
         CaioDisconnect.instance.Disconnect();

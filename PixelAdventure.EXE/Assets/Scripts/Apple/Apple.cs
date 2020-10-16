@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
+
     private SpriteRenderer sr;
     private CircleCollider2D circle;
 
@@ -34,4 +35,5 @@ public class Apple : MonoBehaviour
             Destroy(gameObject, 0.25f);
         }
     }
+    
 }

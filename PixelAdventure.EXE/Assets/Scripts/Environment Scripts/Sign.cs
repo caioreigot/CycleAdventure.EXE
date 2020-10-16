@@ -47,6 +47,14 @@ public class Sign : MonoBehaviour
 
             StartCoroutine(DisableSign());
         }
+
+        // Close the sign when the player opens the chat
+        if (signCanvas.activeSelf && ChatManager.instance.chat.activeSelf)
+        {
+            anim.SetTrigger("Exit");
+
+            StartCoroutine(DisableSign());
+        }
     }
 
     IEnumerator DisableSign()
