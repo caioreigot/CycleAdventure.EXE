@@ -33,8 +33,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Jump();
+        // Cannot move the player with chat focused
+        if (!ChatManager.instance.chatBox.isFocused)
+        {
+            Move();
+            Jump();
+        }
+        else
+        {
+            rig.velocity = new Vector2(0, rig.velocity.y);
+            anim.SetBool("Walk", false);
+        }
     }
 
     void Move() 

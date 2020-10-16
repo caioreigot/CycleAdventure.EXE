@@ -25,7 +25,7 @@ public class Sign : MonoBehaviour
 
     void Update()
     {
-        if (nearTheSign && Input.GetKeyDown("e"))
+        if (nearTheSign && Input.GetKeyDown("e") && !ChatManager.instance.chat.activeSelf)
         {
             if (signCanvas.activeSelf == false)
             {
