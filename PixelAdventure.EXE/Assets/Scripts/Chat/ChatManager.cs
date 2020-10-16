@@ -50,7 +50,7 @@ public class ChatManager : MonoBehaviour
         // Sending message with return key
         if (chatBox.text != "")
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) && !CaioSendMessages.caioTalking)
             {
                 SendMessageToChat(username + ": " + chatBox.text, Message.MessageType.playerMessage);
                 chatBox.text = "";
