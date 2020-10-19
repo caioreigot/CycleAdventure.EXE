@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class SawLeftRight : MonoBehaviour
 {
+
+    private Player Player;
+
     public float speed;
     public float moveTime;
 
     private float timer;
 
     [SerializeField] bool dirRight = true;
+
+    void Start()
+    {
+        Player = GameObject.Find("Player").GetComponent<Player>();
+    }
 
     void Update()
     {
@@ -36,7 +44,7 @@ public class SawLeftRight : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Player.instance.Desappear();
+            Player.Desappear();
             GameController.instance.ShowGameOver();
         }
     }

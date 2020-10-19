@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeHeadUpDown : MonoBehaviour
+public class SpikeHeadLeftRight : MonoBehaviour
 {
 
     private Player Player;
+
     private Rigidbody2D rig;
     private Animator anim;
- 
-    [SerializeField] float gravityScale = 4f;
+
     [SerializeField] float invertTime = 3f;
-    [SerializeField] bool downDir = true;
+    [SerializeField] float speed = 3f;
+    [SerializeField] float speedOverTime = 3f;
+    [SerializeField] bool leftDir = true;
+    [SerializeField] int increaseSpeedOverTime = 30;
+    private bool moving = true;
 
     void Start()
     {
@@ -24,10 +28,20 @@ public class SpikeHeadUpDown : MonoBehaviour
 
     void InitializeVariables()
     {
-        if (downDir)
-            rig.gravityScale = gravityScale;
+        if (leftDir)
+            speed = -speed;
         else
-            rig.gravityScale = -gravityScale;
+            return;
+    }
+
+    void Update()
+    {
+        if (speedOverTime > 0 && moving)
+            speedOverTime += Time.deltaTime * increaseSpeedOverTime;
+        else if (moving)
+            speedOverTime -= Time.deltaTime * increaseSpeedOverTime;
+
+        rig.velocity = new Vector2(speedOverTime, rig.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -39,16 +53,20 @@ public class SpikeHeadUpDown : MonoBehaviour
         }
         else
         {
-            StartCoroutine(InvertGravity());
+            moving = false;
+            StartCoroutine(InvertDirection());
             StartCoroutine(HitAnimation());
         }
     }
 
-    IEnumerator InvertGravity()
+    IEnumerator InvertDirection()
     {
         yield return new WaitForSeconds(invertTime);
 
-        rig.gravityScale = -rig.gravityScale;
+        moving = true;
+        
+        speed = -speed;
+        speedOverTime = speed;
     }
 
     IEnumerator HitAnimation()

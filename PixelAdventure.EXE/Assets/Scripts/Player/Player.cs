@@ -5,13 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public static Player instance;
-
-    //private CapsuleCollider2D cc;
+    public Animator anim;
+    private ParticleSystem walkDust, jumpDust;
     private SpriteRenderer sr;
     private GameObject desappearing;
     private Rigidbody2D rig;
-    [HideInInspector] public static Animator anim;
 
     public float speed;
     public float jumpForce;
@@ -24,11 +22,10 @@ public class Player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        //cc = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         desappearing = transform.Find("Desappearing").gameObject;
-
-        instance = this;
+        walkDust = transform.Find("WalkDustPS").gameObject.GetComponent<ParticleSystem>();
+        jumpDust = transform.Find("JumpDustPS").gameObject.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -61,6 +58,7 @@ public class Player : MonoBehaviour
         if (horizontalMovement > 0f) 
         {
             anim.SetBool("Walk", true);
+            WalkDust();
             // Rotating right
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
@@ -69,6 +67,7 @@ public class Player : MonoBehaviour
         if (horizontalMovement < 0f) 
         {
             anim.SetBool("Walk", true);
+            WalkDust();
             // Rotating left
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
@@ -89,6 +88,8 @@ public class Player : MonoBehaviour
                 //rig.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                 rig.velocity = Vector2.up * jumpForce;
                 doubleJump = true;
+
+                JumpDust();
                 anim.SetBool("Jump", true);
             }
             else
@@ -120,6 +121,16 @@ public class Player : MonoBehaviour
         desappearing.SetActive(true);
         
         Destroy(gameObject, 0.3f);
+    }
+
+    public void WalkDust()
+    {
+        walkDust.Play();
+    }
+
+    public void JumpDust()
+    {
+        jumpDust.Play();
     }
 
 }

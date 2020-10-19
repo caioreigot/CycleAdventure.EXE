@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AngryPig : MonoBehaviour
 {
+
+    private Player Player;
+
     private Rigidbody2D rig;
     
     private Animator anim;
@@ -29,6 +32,7 @@ public class AngryPig : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.Find("Player").GetComponent<Player>();
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -74,9 +78,10 @@ public class AngryPig : MonoBehaviour
             else
             {
                 playerDestroyed = true;
-                Player.instance.Desappear();
+                Player.Desappear();
                 GameController.instance.ShowGameOver();
             }
         }
     }
+    
 }

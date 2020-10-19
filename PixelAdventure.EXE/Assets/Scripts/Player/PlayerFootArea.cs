@@ -5,6 +5,17 @@ using UnityEngine;
 public class PlayerFootArea : MonoBehaviour
 {
 
+    private Player Player;
+
+    void Start()
+    {
+        /*
+         * Using GetComponentInParent to always get the parent object script, 
+         * even when using the portal and the clone name is "Clone"
+        */
+        Player = GetComponentInParent<Player>();
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         // Stepping on a falling platform
@@ -12,7 +23,7 @@ public class PlayerFootArea : MonoBehaviour
         {
             FallingPlatform.playerOnPlatform = true;
             
-            Player.instance.isJumping = false;
+            Player.isJumping = false;
             Player.anim.SetBool("Jump", false);
         }
 
@@ -21,15 +32,16 @@ public class PlayerFootArea : MonoBehaviour
         {
             if (collider.gameObject.layer == 8) FallingPlatform.playerOnPlatform = false;
 
-            Player.instance.isJumping = false;
+            Player.isJumping = false;
 
-            Player.instance.ResetJumpAnimations();
+            Player.ResetJumpAnimations();
+            Player.JumpDust();
         }
 
         // Colliding with spikes (game over)
         if (collider.gameObject.tag == "Spike")
         {
-            Player.instance.Desappear();
+            Player.Desappear();
 
             GameController.instance.ShowGameOver();
         }
@@ -39,12 +51,12 @@ public class PlayerFootArea : MonoBehaviour
     {
         if (collider.gameObject.layer == 8 || collider.gameObject.layer == 10) 
         {
-            Player.instance.isJumping = true;
+            Player.isJumping = true;
         }
 
         if (collider.gameObject.layer == 14)
         {
-            Player.instance.isBlowing = false;
+            Player.isBlowing = false;
         }
     }
 
@@ -52,7 +64,7 @@ public class PlayerFootArea : MonoBehaviour
     {
         if (collider.gameObject.layer == 14)
         {
-            Player.instance.isBlowing = true;
+            Player.isBlowing = true;
         }
     }
 

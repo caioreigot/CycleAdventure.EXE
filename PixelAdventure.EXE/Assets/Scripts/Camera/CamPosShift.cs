@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class CamPosShift : MonoBehaviour
 {
+    
     private CinemachineVirtualCamera vcam;
     private CinemachineFramingTransposer framingTransposer;
 
@@ -202,4 +203,5 @@ public class CamPosShift : MonoBehaviour
             } 
         }
     }
+
 }
