@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System.Runtime.InteropServices;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PortalController : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class PortalController : MonoBehaviour
     private GameObject portalIn, portalOut;
     private Transform portalInSpawnPoint, portalOutSpawnPoint;
     private Collider2D portalInCollider, portalOutCollider;
+    private CinemachineVirtualCamera vcam;
+    private Vector3 vcamPos;
 
     void Start()
     {
@@ -24,6 +28,9 @@ public class PortalController : MonoBehaviour
         portalInCollider = portalIn.GetComponent<Collider2D>();
         portalOutCollider = portalOut.GetComponent<Collider2D>();
 
+        vcam = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
+        vcamPos = GameObject.Find("CM vcam1").transform.position;
+
         instance = this;
     }
 
@@ -33,11 +40,13 @@ public class PortalController : MonoBehaviour
         {
             var instantiatedClone = Instantiate(clone, portalInSpawnPoint.position, Quaternion.identity);
             instantiatedClone.gameObject.name = "Clone";
+            vcam.m_Follow = instantiatedClone.transform;
         }
         else if (whereToCreate == "atOut")
         {
             var instantiatedClone = Instantiate(clone, portalOutSpawnPoint.position, Quaternion.identity);
             instantiatedClone.gameObject.name = "Clone";
+            vcam.m_Follow = instantiatedClone.transform;
         }
     }
 

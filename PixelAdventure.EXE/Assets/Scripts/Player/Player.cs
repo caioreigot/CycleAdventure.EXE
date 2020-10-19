@@ -9,14 +9,16 @@ public class Player : MonoBehaviour
     private ParticleSystem walkDust, jumpDust;
     private SpriteRenderer sr;
     private GameObject desappearing;
-    private Rigidbody2D rig;
 
-    public float speed;
-    public float jumpForce;
+    [HideInInspector] public Rigidbody2D rig;
+    [HideInInspector] public bool canMove = true;
 
     [HideInInspector] public bool isJumping;
     [HideInInspector] public bool doubleJump;
     [HideInInspector] public bool isBlowing;
+
+    public float speed;
+    public float jumpForce;
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Cannot move the player with chat focused
-        if (!ChatManager.instance.chatBox.isFocused)
+        if (!ChatManager.instance.chatBox.isFocused && canMove)
         {
             Move();
             Jump();

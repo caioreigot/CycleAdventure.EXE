@@ -104,6 +104,17 @@ public class ChatManager : MonoBehaviour
             case Message.MessageType.playerMessage:
                 color = playerMessage;
                 break;
+                
+            case Message.MessageType.caioMessage:
+                color = caioMessage;
+                break;
+
+            case Message.MessageType.info:
+                color = info;
+                break;
+
+            default:
+                break;
         }
 
         return color;

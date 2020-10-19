@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Portal : MonoBehaviour
 {
 
     private Player Player;
+    private CinemachineVirtualCamera vcam;
     private Rigidbody2D enteredRigidbody;
     private float enterDir, exitDir;
 
     void Start()
     {
         Player = GameObject.Find("Player").GetComponent<Player>();
+        vcam = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -39,8 +42,7 @@ public class Portal : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             exitDir = enteredRigidbody.velocity.x;
-
-            // If player give up to enter the portal
+            
             if (enterDir >= 0 && exitDir >= 0 || enterDir <= 0 && exitDir <= 0)
             {
                 Destroy(collider.gameObject);
@@ -50,8 +52,11 @@ public class Portal : MonoBehaviour
 
                 PortalController.instance.EnableColliders();
             }
+            // If player give up to enter the portal
             else
             {
+                vcam.m_Follow = GameObject.Find("Player").transform;
+                
                 Destroy(GameObject.Find("Clone"));
                 PortalController.instance.EnableColliders();
             }

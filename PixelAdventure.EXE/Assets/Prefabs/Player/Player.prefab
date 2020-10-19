@@ -128,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4176717078171843508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0572, y: -0.1305, z: 0}
+  m_LocalPosition: {x: -0.069, y: -0.1305, z: 0}
   m_LocalScale: {x: 0.22765534, y: 0.22765534, z: 0.22765534}
   m_Children: []
   m_Father: {fileID: 4740826649585491684}
@@ -967,7 +967,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 65
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4871,7 +4871,7 @@ GameObject:
   - component: {fileID: 4740826649585491680}
   - component: {fileID: 6066296903100813246}
   - component: {fileID: 5353053734601508749}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4981,11 +4981,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  speed: 5
-  jumpForce: 10
+  rig: {fileID: 0}
+  canMove: 1
   isJumping: 0
   doubleJump: 0
   isBlowing: 0
+  speed: 5
+  jumpForce: 10
 --- !u!95 &4740826649585491680
 Animator:
   serializedVersion: 3
