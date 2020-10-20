@@ -17,16 +17,14 @@ public class SpikeHeadLeftRight : MonoBehaviour
     [SerializeField] int increaseSpeedOverTime = 30;
     private bool moving = true;
 
-    void Start()
+    void Awake()
     {
         Player = GameObject.Find("Player").GetComponent<Player>();
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-        InitializeVariables();
     }
 
-    void InitializeVariables()
+    void Start()
     {
         if (leftDir)
             speed = -speed;

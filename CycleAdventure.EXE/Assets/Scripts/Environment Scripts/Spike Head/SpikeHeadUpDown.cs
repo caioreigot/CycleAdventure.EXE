@@ -5,29 +5,32 @@ using UnityEngine;
 public class SpikeHeadUpDown : MonoBehaviour
 {
 
+    public static SpikeHeadUpDown instance;
+
     private Player Player;
-    private Rigidbody2D rig;
     private Animator anim;
  
+    [HideInInspector] public Rigidbody2D rig;
+    
     [SerializeField] float gravityScale = 4f;
     [SerializeField] float invertTime = 3f;
     [SerializeField] bool downDir = true;
 
-    void Start()
+    void Awake()
     {
         Player = GameObject.Find("Player").GetComponent<Player>();
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-        InitializeVariables();
     }
 
-    void InitializeVariables()
+    void Start()
     {
         if (downDir)
             rig.gravityScale = gravityScale;
         else
             rig.gravityScale = -gravityScale;
+
+        instance = this;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

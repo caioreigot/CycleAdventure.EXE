@@ -51,7 +51,7 @@ MonoBehaviour:
   textObject: {fileID: 0}
   chatBox: {fileID: 0}
   playerMessage: {r: 1, g: 0.99607843, b: 0.40392157, a: 1}
-  caioMessage: {r: 0.114909925, g: 0.87058824, b: 0.06790589, a: 0}
+  caioMessage: {r: 0.114909925, g: 0.87058824, b: 0.06790589, a: 1}
   info: {r: 0.4669811, g: 0.83816576, b: 1, a: 1}
   messageList: []
 --- !u!114 &2562547935806488577
@@ -66,3 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da319b0ae1efce45a29f7e5eed81790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modCommands: 0

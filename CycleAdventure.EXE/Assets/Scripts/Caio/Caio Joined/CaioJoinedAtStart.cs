@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaioJoined : MonoBehaviour
+public class CaioJoinedAtStart : MonoBehaviour
 {
+
     void Start()
     {
         Invoke("DeactivateJoined", 4f);
@@ -13,4 +14,5 @@ public class CaioJoined : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 }

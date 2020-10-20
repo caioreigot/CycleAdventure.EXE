@@ -9,6 +9,7 @@ public class TrashCutscene : MonoBehaviour
     [SerializeField] string text = "he tHrew Me hEre";
     [SerializeField] GameObject prototype;
     [SerializeField] GameObject prototypeSpeak;
+    [SerializeField] GameObject glitchRemoveArea;
     [SerializeField] Text prototypeText;
     [SerializeField] PortalChangePos portalChangePos;
     [SerializeField] float typeSpeed = 0.3f;
@@ -39,6 +40,7 @@ public class TrashCutscene : MonoBehaviour
 
         portalChangePos.ChangePosition(new Vector3(-182.22f, -37.53f, 0));
 
+        glitchRemoveArea.SetActive(true);
         Destroy(gameObject);
     }
 

@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaioSendMessages : MonoBehaviour
+public class CaioSendMessages1 : MonoBehaviour
 {
 
-    public Message.MessageType messageType = Message.MessageType.caioMessage;
-    public static bool caioTalking;
+    [HideInInspector] public Message.MessageType messageType = Message.MessageType.caioMessage;
 
     void Start()
     {
         Invoke("StartCoroutine", 4f);
-        caioTalking = true;
+        CaioManager.talking = true;
     }
 
     void StartCoroutine()
@@ -42,11 +41,6 @@ public class CaioSendMessages : MonoBehaviour
         yield return new WaitForSeconds(13f);
 
         ChatManager.instance.SendMessageToChat(
-            "Caio: It seems that he hates those who play this game, for not being able to participate and for not being able to get the reward at the end", messageType);
-        
-        yield return new WaitForSeconds(13f);
-
-        ChatManager.instance.SendMessageToChat(
             "Caio: He had only appeared once while I was finishing the game, and after I deleted everything related to him, he stopped showing up, I don't know what's going on", messageType);
         
         yield return new WaitForSeconds(13f);
@@ -61,8 +55,7 @@ public class CaioSendMessages : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
 
-        caioTalking = false;
+        CaioManager.talking = false;
         CaioDisconnect.instance.Disconnect();
     }
-    
 }
