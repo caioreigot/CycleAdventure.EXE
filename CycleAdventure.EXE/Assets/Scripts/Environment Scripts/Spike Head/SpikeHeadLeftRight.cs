@@ -11,7 +11,7 @@ public class SpikeHeadLeftRight : MonoBehaviour
     private Animator anim;
 
     [SerializeField] float invertTime = 3f;
-    [SerializeField] float speed = 3f;
+    [SerializeField] float speed;
     [SerializeField] float speedOverTime = 3f;
     [SerializeField] bool leftDir = true;
     [SerializeField] int increaseSpeedOverTime = 30;
@@ -25,11 +25,13 @@ public class SpikeHeadLeftRight : MonoBehaviour
     }
 
     void Start()
-    {
+    {        
         if (leftDir)
-            speed = -speed;
+            speedOverTime = -speedOverTime;
         else
             return;
+
+        speed = speedOverTime;
     }
 
     void Update()

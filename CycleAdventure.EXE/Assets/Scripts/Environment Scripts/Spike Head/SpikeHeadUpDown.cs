@@ -15,6 +15,7 @@ public class SpikeHeadUpDown : MonoBehaviour
     [SerializeField] float gravityScale = 4f;
     [SerializeField] float invertTime = 3f;
     [SerializeField] bool downDir = true;
+    [SerializeField] bool animate = true;
 
     void Awake()
     {
@@ -43,7 +44,9 @@ public class SpikeHeadUpDown : MonoBehaviour
         else
         {
             StartCoroutine(InvertGravity());
-            StartCoroutine(HitAnimation());
+
+            if (animate)
+                StartCoroutine(HitAnimation());
         }
     }
 

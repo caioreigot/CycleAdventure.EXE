@@ -37,7 +37,7 @@ public class CaioSendMessages2 : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         ChatManager.instance.SendMessageToChat(
-            "Caio: He's not letting me enter the server to help you! I'll give you server moderator permissions, try to do something with the commands", messageType);
+            "Caio: He's not letting me configure the map to help you, I'll give you server moderator permissions, try to do something with the commands", messageType);
 
         yield return new WaitForSeconds(8f);
 

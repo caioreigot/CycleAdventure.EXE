@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
         else
         {
             ResetTotalScore();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
 
     }

@@ -5557,7 +5557,7 @@ Transform:
   - {fileID: 2050579852}
   - {fileID: 281798775}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &644133884 stripped
 RectTransform:
@@ -5753,7 +5753,7 @@ PrefabInstance:
     - target: {fileID: 6518852245076458570, guid: 4724a5ec607f5024e87b8ff35135b4bf,
         type: 3}
       propertyPath: m_Name
-      value: NextLevel
+      value: Next Level
       objectReference: {fileID: 0}
     - target: {fileID: 6518852245076458580, guid: 4724a5ec607f5024e87b8ff35135b4bf,
         type: 3}
@@ -5793,7 +5793,7 @@ PrefabInstance:
     - target: {fileID: 6518852245076458580, guid: 4724a5ec607f5024e87b8ff35135b4bf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6518852245076458580, guid: 4724a5ec607f5024e87b8ff35135b4bf,
         type: 3}
@@ -5873,7 +5873,7 @@ Transform:
   - {fileID: 132330602}
   - {fileID: 1115198013}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &888797718 stripped
 Transform:
@@ -8271,7 +8271,7 @@ PrefabInstance:
     - target: {fileID: 2281858715087509860, guid: 88d6e1e40f1f9c74b9fb1f7601112dd1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2281858715087509860, guid: 88d6e1e40f1f9c74b9fb1f7601112dd1,
         type: 3}
@@ -8350,7 +8350,7 @@ PrefabInstance:
     - target: {fileID: 3500913903266160272, guid: 9103ad23ec6378d44b40873fe21af4de,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3500913903266160272, guid: 9103ad23ec6378d44b40873fe21af4de,
         type: 3}
@@ -8370,7 +8370,7 @@ PrefabInstance:
     - target: {fileID: 3500913903266160274, guid: 9103ad23ec6378d44b40873fe21af4de,
         type: 3}
       propertyPath: m_Name
-      value: LevelLoader
+      value: Level Loader
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9103ad23ec6378d44b40873fe21af4de, type: 3}
@@ -9281,6 +9281,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1790752928534974186, guid: a08f586109538d542a2aa760a0706f3a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481534847600948545, guid: a08f586109538d542a2aa760a0706f3a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4740826649585491682, guid: a08f586109538d542a2aa760a0706f3a,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -9423,7 +9433,7 @@ PrefabInstance:
     - target: {fileID: 5725924745057086054, guid: b158c721711b56849933337eefbab1a1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5725924745057086054, guid: b158c721711b56849933337eefbab1a1,
         type: 3}

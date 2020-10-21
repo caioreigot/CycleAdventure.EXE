@@ -55,6 +55,7 @@ public class PrototypeController : MonoBehaviour
                     if (count == 12)
                     {
                         PlayerPrefs.SetInt("AfterQuit", 1);
+                        PlayerPrefs.SetInt("ApplesWhenQuit", StaticVariables.TotalScore);
                         Application.Quit();
                     }
                 }
