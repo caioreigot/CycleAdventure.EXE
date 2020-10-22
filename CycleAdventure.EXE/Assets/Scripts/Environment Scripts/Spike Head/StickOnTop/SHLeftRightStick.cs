@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeHeadLeftRight : MonoBehaviour
+public class SHLeftRightStick : MonoBehaviour
 {
 
+    private GameObject playerGO;
     private Player Player;
 
+    private Rigidbody2D playerRig;
     private Rigidbody2D rig;
+
     private Animator anim;
 
     private float speed;
@@ -16,23 +19,32 @@ public class SpikeHeadLeftRight : MonoBehaviour
     [SerializeField] bool leftDir = true;
     [SerializeField] int increaseSpeedOverTime = 30;
     private bool moving = true;
+    private bool playerOverStick = false;
 
     void Awake()
     {
-        Player = GameObject.Find("Player").GetComponent<Player>();
+        playerGO = GameObject.Find("Player");
+        playerRig = playerGO.GetComponent<Rigidbody2D>();
+        Player = playerGO.GetComponent<Player>();
+
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
     void Start()
     {        
+        InitializeVariable();
+    }
+
+    void InitializeVariable()
+    {
         if (leftDir)
             speedOverTime = -speedOverTime;
 
         speed = speedOverTime;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (speedOverTime > 0 && moving)
             speedOverTime += Time.deltaTime * increaseSpeedOverTime;
@@ -40,16 +52,20 @@ public class SpikeHeadLeftRight : MonoBehaviour
             speedOverTime -= Time.deltaTime * increaseSpeedOverTime;
 
         rig.velocity = new Vector2(speedOverTime, rig.velocity.y);
+
+        // Exercise the same speed as the spike head on the player if it is above the stick
+        if (playerOverStick)
+            playerRig.velocity = new Vector2(speedOverTime + Input.GetAxis("Horizontal") * Player.speed, playerRig.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && collision.otherCollider.tag != "Stick")
         {
             Player.Desappear();
             GameController.instance.ShowGameOver();
         }
-        else
+        else if (collision.otherCollider.tag != "Stick")
         {
             moving = false;
             speedOverTime = 0;
@@ -57,16 +73,29 @@ public class SpikeHeadLeftRight : MonoBehaviour
             StartCoroutine(InvertDirection());
             StartCoroutine(HitAnimation());
         }
+
+        if (collision.gameObject.tag == "Player" && collision.otherCollider.tag == "Stick")
+        {
+            playerOverStick = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && collision.otherCollider.tag == "Stick")
+        {
+            playerOverStick = false;
+        }
     }
 
     IEnumerator InvertDirection()
     {
         yield return new WaitForSeconds(invertTime);
 
+        moving = true;
+        
         speed = -speed;
         speedOverTime = speed;
-
-        moving = true;
     }
 
     IEnumerator HitAnimation()

@@ -17,6 +17,8 @@ public class ChatManager : MonoBehaviour
 
     public Color playerMessage, caioMessage, info;
 
+    public bool disableChat;
+
     [SerializeField]
     List<Message> messageList = new List<Message>();
 
@@ -36,7 +38,7 @@ public class ChatManager : MonoBehaviour
     {
 
         // Open chat
-        if (chat.activeSelf == false && Input.GetKeyDown(KeyCode.Return))
+        if (chat.activeSelf == false && Input.GetKeyDown(KeyCode.Return) && !disableChat)
         {
             chat.SetActive(true);
         }

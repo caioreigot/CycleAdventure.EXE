@@ -20,6 +20,16 @@ public class ChatCommands : MonoBehaviour
         playerNormalJumpForce = GameObject.Find("Player").GetComponent<Player>().jumpForce;
 
         instance = this;
+
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            Invoke("SendMessageFirstLevel", 1f);
+        }
+    }
+
+    void SendMessageFirstLevel()
+    {
+        ChatManager.instance.SendMessageToChat("Type /help to see the available commands.", Message.MessageType.info);
     }
 
     public void CheckCommand(string command)
