@@ -10,13 +10,15 @@ public class SpikeHeadLeftRight : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
 
-    private float speed;
-    [SerializeField] float invertTime = 3f;
-    [SerializeField] float speedOverTime = 3f;
-    [SerializeField] bool leftDir = true;
-    [SerializeField] int increaseSpeedOverTime = 30;
-    private bool moving = true;
+    [HideInInspector] public bool moving = true;
 
+    [SerializeField] float speed;
+    [SerializeField] float invertTime = 3f;
+    [SerializeField] bool leftDir = true;
+    
+    [SerializeField] int increaseSpeedOverTime = 30;
+    [SerializeField] float speedOverTime = 3f;
+    
     void Awake()
     {
         Player = GameObject.Find("Player").GetComponent<Player>();
@@ -51,6 +53,10 @@ public class SpikeHeadLeftRight : MonoBehaviour
         }
         else
         {
+            // Hit SFX
+            if (GetComponent<AudioSource>() != null)
+                GetComponent<AudioSource>().Play();
+
             moving = false;
             speedOverTime = 0;
 

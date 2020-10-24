@@ -82,7 +82,11 @@ public class ChatCommands : MonoBehaviour
 
             foreach (Transform child in spikeHeadParent.transform)
             {
-                child.gameObject.GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePositionY;
+                if (child.gameObject.name == "Spike Head Up Down")
+                    child.gameObject.GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePositionY;
+                    
+                if (child.gameObject.name == "Spike Head Left Right")
+                    child.gameObject.GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePositionX;
             }
 
             foreach (Transform child in sawParent.transform)

@@ -43,6 +43,8 @@ public class GlitchAreaController : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioManager.instance.MusicOnOff("off");
+
             glitchScript.intensity = intensity;
             glitchScript.flipIntensity = flipIntensity;
             glitchScript.colorIntensity = colorIntensity;

@@ -28,6 +28,9 @@ public class Apple : MonoBehaviour
             // Making the effect of collecting appear
             collected.SetActive(true);
 
+            // Sound SFX
+            FindObjectOfType<AudioManager>().Play("Apple Collected");
+
             StaticVariables.TotalScore += score;
 
             GameController.instance.UpdateScoreText();

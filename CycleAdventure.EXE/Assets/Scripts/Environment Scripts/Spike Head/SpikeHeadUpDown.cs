@@ -43,6 +43,10 @@ public class SpikeHeadUpDown : MonoBehaviour
         }
         else
         {
+            // Hit SFX
+            if (GetComponent<AudioSource>() != null)
+                GetComponent<AudioSource>().Play();
+
             StartCoroutine(InvertGravity());
 
             if (animate)

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +29,7 @@ public class Sign : MonoBehaviour
         {
             if (signCanvas.activeSelf == false)
             {
+                FindObjectOfType<AudioManager>().Play("Open Sign");
                 signCanvas.SetActive(true);
                 objectRelatedText.SetActive(true);
             }

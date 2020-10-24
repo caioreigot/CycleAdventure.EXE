@@ -58,6 +58,9 @@ public class AngryPig : MonoBehaviour
 
             if (height > 0 && !playerDestroyed)
             {
+                // Sound SFX
+                FindObjectOfType<AudioManager>().Play("Pig Hit");
+
                 // Prevent the enemy from falling off the platform (after turning off the colliders)
                 rig.bodyType = RigidbodyType2D.Kinematic;
 

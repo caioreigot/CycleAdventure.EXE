@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PrototypeSpawnTrigger : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PrototypeSpawnTrigger : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioManager.instance.MusicOnOff("off");
+
+            FindObjectOfType<AudioManager>().Play("Glitch");
             prototype.SetActive(true);
 
             appleUI.SetActive(false);

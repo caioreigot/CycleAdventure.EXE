@@ -46,7 +46,8 @@ public class ChatManager : MonoBehaviour
         // Close chat
         if (chat.activeSelf == true && Input.GetKeyDown(KeyCode.Escape))
         {
-            chat.SetActive(false);
+            // Short delay to not open the pause menu
+            Invoke("CloseChat", 0.05f);
         }
 
         // Sending message with return key
@@ -122,7 +123,13 @@ public class ChatManager : MonoBehaviour
         return color;
     }
 
+    void CloseChat()
+    {
+        chat.SetActive(false);
+    }
+
 }
+
 
 [System.Serializable]
 public class Message

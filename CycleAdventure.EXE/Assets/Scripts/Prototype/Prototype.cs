@@ -28,6 +28,7 @@ public class Prototype : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         { 
+            GameController.instance.gameOverCalledThisFrame = true;
             PrototypeController.instance.PrototypeSpeak();
 
             Destroy(player);

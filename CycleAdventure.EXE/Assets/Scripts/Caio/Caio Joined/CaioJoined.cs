@@ -24,7 +24,6 @@ public class CaioJoined : MonoBehaviour
 
     IEnumerator ShowCaioJoined()
     {
-        prototypeJoined.SetActive(false);
         caioJoined.SetActive(true);
 
         yield return new WaitForSeconds(4f);

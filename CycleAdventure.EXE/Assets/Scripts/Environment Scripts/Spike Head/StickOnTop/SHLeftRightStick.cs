@@ -67,6 +67,10 @@ public class SHLeftRightStick : MonoBehaviour
         }
         else if (collision.otherCollider.tag != "Stick")
         {
+            // Hit SFX
+            if (GetComponent<AudioSource>() != null)
+                GetComponent<AudioSource>().Play();
+
             moving = false;
             speedOverTime = 0;
 

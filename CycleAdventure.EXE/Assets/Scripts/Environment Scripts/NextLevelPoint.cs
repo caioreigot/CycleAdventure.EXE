@@ -7,10 +7,12 @@ public class NextLevelPoint : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Player Player = GameObject.Find("Player").GetComponent<Player>();
+        Player Player = FindObjectOfType<Player>();
 
         if (collision.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("Next Level");
+
             Player.Desappear();
             LevelLoader.instance.LoadNextLevel();
         }

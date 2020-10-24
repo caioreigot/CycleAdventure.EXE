@@ -17,6 +17,7 @@ public class PortalAnimManager : MonoBehaviour
     void EnablePortal()
     {
         portal.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Portal");
 
         Invoke("ThrowNextLevelPoint", 0.28f);
     }

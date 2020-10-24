@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class TrashCutscene : MonoBehaviour
 {
@@ -30,11 +31,17 @@ public class TrashCutscene : MonoBehaviour
 
     IEnumerator StartCutscene()
     {
-        Player Player = GameObject.Find("Player").GetComponent<Player>();
+        AudioManager.instance.MusicOnOff("off");
+        FindObjectOfType<AudioManager>().Play("Glitch");
+
+        Player Player = FindObjectOfType<Player>();
         Player.transform.eulerAngles = new Vector3(0f, 180f, 0f);
         Player.canMove = false;
 
         yield return new WaitForSeconds(8f);
+
+        Sound glitch = Array.Find(AudioManager.instance.sounds, s => s.name == "Glitch");
+        glitch.source.Stop();
 
         Player.canMove = true;
 

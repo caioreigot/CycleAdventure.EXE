@@ -13,7 +13,7 @@ public class TrashFallTrigger : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             trashFall.SetActive(true);
-            ChatManager.instance.SendMessageToChat("Player joined world of deleted.", Message.MessageType.info);
+            ChatManager.instance.SendMessageToChat("Player joined world of the deleted.", Message.MessageType.info);
 
             Destroy(gameObject);
         }

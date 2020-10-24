@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     private bool restartGame = false;
     private int applesDecrement = 100;
 
-    private bool gameOverCalledThisFrame;
+    [HideInInspector] public bool gameOverCalledThisFrame = false;
 
     void Start()
     {
@@ -52,6 +52,12 @@ public class GameController : MonoBehaviour
     
     public void ShowGameOver()
     {
+        // Sound SFX
+        FindObjectOfType<AudioManager>().Play("Game Over");
+        
+        // Stoping music
+        AudioManager.instance.MusicOnOff("off");
+
         // Preventing multiple calls
         if (gameOverCalledThisFrame) return;
         gameOverCalledThisFrame = true;
@@ -84,6 +90,8 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
+        AudioManager.instance.MusicOnOff("on");
+
         // Restart level
         if (!restartGame)
         {

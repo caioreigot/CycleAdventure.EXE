@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -92,12 +93,14 @@ public class Player : MonoBehaviour
                 doubleJump = true;
 
                 JumpDust();
+                FindObjectOfType<AudioManager>().Play("Player Jump");
                 anim.SetBool("Jump", true);
             }
             else
             {
                 if (doubleJump)
                 {
+                    FindObjectOfType<AudioManager>().Play("Player Jump");
                     anim.SetBool("Double Jump", true);
 
                     rig.velocity = Vector2.up * jumpForce;

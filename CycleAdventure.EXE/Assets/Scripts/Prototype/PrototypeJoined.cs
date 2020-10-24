@@ -21,6 +21,8 @@ public class PrototypeJoined : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioManager.instance.MusicOnOff("off");
+
             boxCollider2D.enabled = false;
             prototypeJoined.SetActive(true);
 
