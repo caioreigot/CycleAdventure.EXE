@@ -9,6 +9,6 @@
 <div align="center">
   <b>
     First game made by me at Unity, for learning purposes, sorry for the messy code<br>
-    Download the game on itch.io: https://caiocosta.itch.io
+    Download the game on my itch.io: https://caiocosta.itch.io/cycle-adventure
   </b>
 </div>
