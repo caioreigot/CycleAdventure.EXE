@@ -6,8 +6,9 @@
   </a>
 </div>
 
-### First game made by me at Unity, for learning purposes, sorry for the messy code<br>
-
 <div align="center">
-### Download the game on itch.io: https://caiocosta.itch.io
+  <b>
+    First game made by me at Unity, for learning purposes, sorry for the messy code<br>
+    Download the game on itch.io: https://caiocosta.itch.io
+  </b>
 </div>
