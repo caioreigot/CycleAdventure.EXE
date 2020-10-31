@@ -7598,6 +7598,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 715238177}
     m_Modifications:
+    - target: {fileID: 9065342160275139065, guid: 89dad16f94412a5408de7fa10fd4d650,
+        type: 3}
+      propertyPath: m_Text
+      value: "\rWhen you die, you lose 100 apples, if you have less than this amount,
+        you go back to the beginning, which is here hahaha! I hope you don't find
+        this plaque again, good luck!"
+      objectReference: {fileID: 0}
     - target: {fileID: 9065342160426669718, guid: 89dad16f94412a5408de7fa10fd4d650,
         type: 3}
       propertyPath: m_LocalPosition.x
