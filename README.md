@@ -8,7 +8,7 @@
 
 <div align="center">
   <b>
-    First game made by me at Unity, for learning purposes, sorry for the messy code<br>
-    Download the game on my itch.io: https://caiocosta.itch.io/cycle-adventure
+    First game made by me at Unity, for learning purposes<br>
+    Download the game at: https://caiocosta.itch.io/cycle-adventure
   </b>
 </div>
